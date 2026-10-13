@@ -1,9 +1,8 @@
 services:
   - type: web
     name: employee-leave-backend
-    runtime: java
-    buildCommand: ./mvnw clean package -DskipTests
-    startCommand: java -jar target/employee-leave-management-1.0.0.jar
+    runtime: docker
+    dockerfilePath: ./Dockerfile
     healthCheckPath: /api/auth/health
     plan: free
     envVars:
